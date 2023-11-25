@@ -13,6 +13,7 @@ jobs:
         run: |
           pip install -r requirements.txt 
           dvc repro
-          dvc metrics diff --md remotes/origin/master
+          echo ${{GITHUB_HEAD_REF}}
+          dvc metrics diff --md ${{GITHUB_HEAD_REF}}/master
       #    gh pr comment ${{github.event.pull_request.number}} -F report.md
           
