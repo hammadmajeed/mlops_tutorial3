@@ -1,12 +1,14 @@
-name: farmers
+name: Python application
 on: [push]
 jobs:
   run:
     runs-on: [ubuntu-latest]
-    container: docker://dvcorg/cml-py3:latest
     steps:
-      - uses: actions/checkout@v2
-      - name: cml_run
+      - uses: actions/checkout@v3
+      - name: pipeline run
+        uses: actions/setup-python@v3
+        with:
+          python-version: "3.10"
         run: |
           pip install -r requirements.txt
           dvc repro 
