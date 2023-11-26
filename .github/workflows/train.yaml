@@ -12,6 +12,6 @@ jobs:
         ref: master  # specify the branch you want to access the file from
 
     - name: Display file content
-      run: cat master/metrics.json  # adjust the path accordingly
+      run: cat origin/master/metrics.json  # adjust the path accordingly
 
     # Add more steps as needed for your workflow
