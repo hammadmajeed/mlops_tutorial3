@@ -1,10 +1,6 @@
 name: Access File from Master Branch
 
-on:
-  push:
-    branches:
-      - experimental
-
+on: [push]
 jobs:
   access-file-job:
     runs-on: ubuntu-latest
