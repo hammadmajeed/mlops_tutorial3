@@ -1,18 +1,21 @@
-name: DVC Tracking with Github Actions
-on: [push]
+name: Access File from Master Branch
+
+on:
+  push:
+    branches:
+      - experimental
+
 jobs:
-  run:
-    permissions: write-all
+  access-file-job:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v2
-      - name: Running_updates
-        env: 
-          GH_TOKEN: ${{ github.token }}
-          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
-        run: |
-          pip install -r requirements.txt 
-          dvc repro
-          dvc metrics diff --md master > report.md
-          gh pr comment ${{github.event.pull_request.number}} -F report.md
-          
+    - name: Checkout code
+      uses: actions/checkout@v2
+      with:
+        ref: master  # specify the branch you want to access the file from
+
+    - name: Display file content
+      run: cat master/metrics.json  # adjust the path accordingly
+
+    # Add more steps as needed for your workflow
