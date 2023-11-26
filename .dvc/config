@@ -1,6 +1,4 @@
 [core]
     remote = defaultremote
-['remote "name=defaultremote"']
-    url = gdrive://1juIGHFJmohl9z5exl5nDJdKcxatMjdj2
 ['remote "defaultremote"']
     url = gdrive://1juIGHFJmohl9z5exl5nDJdKcxatMjdj2

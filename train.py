@@ -11,7 +11,6 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.impute import SimpleImputer
 
-#added to satisfy Raheeimeen
 df = pd.read_csv("data_processed.csv")
 
 #### Get features ready to model! 
